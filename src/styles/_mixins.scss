@@ -1,0 +1,10 @@
+@mixin container {
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+}
+
+@mixin grid($min: 240px, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  gap: $gap;
+}

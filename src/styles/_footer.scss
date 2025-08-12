@@ -1,0 +1,8 @@
+@use './variables' as var;
+@use './mixins' as mix;
+
+.footer {
+  margin-top: auto;
+  background: var.$bg-light;
+  &__inner { @include mix.container; padding: 24px 0; text-align: center; opacity: .85; }
+}

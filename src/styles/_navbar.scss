@@ -1,0 +1,9 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.navbar {
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  &__inner { @include mix.container; padding: 16px 0; display: flex; justify-content: space-between; align-items: center; }
+  &__logo { color: var.$primary; font-weight: 700; }
+  &__links { display: flex; gap: 20px; }
+}

@@ -1,8 +1,30 @@
 @use './variables' as var;
 @use './mixins' as mix;
 
+
 .footer {
-  margin-top: auto;
-  background: var.$bg-light;
-  &__inner { @include mix.container; padding: 24px 0; text-align: center; opacity: .85; }
+  background: var.$bg-contrast;
+  color: #fff;
+  margin-top: 24px;
+
+  &__inner {
+    padding: 60px 0;
+    display: grid;
+    place-items: center;
+    gap: 10px;
+  }
+
+  &__logo {
+    height: 36px;
+    filter: brightness(0) invert(1);
+  }
+
+  &__copy {
+    opacity: .8;
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
 }

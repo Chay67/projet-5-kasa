@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-const Card = (props) => {
-    const { id, title, cover } = props;
-
-    return (
-        <div>
-            <img src={cover} alt={title} />
-            <div>{id} - {title}</div>
-        </div>
-    )
+export default function Card({ id, title, cover }) {
+  return (
+    <Link to={`/logement/${id}`} className="card">
+      <div className="card__media">
+        {cover ? <img src={cover} alt={title} /> : <div className="card__fallback" />}
+        <div className="card__gradient" />
+      </div>
+      <div className="card__title">{title}</div>
+    </Link>
+  );
 }
-
-export default Card

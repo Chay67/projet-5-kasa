@@ -1,6 +1,34 @@
-@use './reset';
+@use './reset.scss';
+@use './variables.scss' as var;
+@use './mixins.scss' as mix;
+
 @use "base";
 @use "navbar";
 @use "footer";
 @use "cards";
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var.$text;
+    background: var.$bg;
+}
+
+main {
+    padding: 8px 0 24px;
+}
+
+.page {
+    @include mix.container;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

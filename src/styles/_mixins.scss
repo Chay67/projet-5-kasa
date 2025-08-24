@@ -1,6 +1,7 @@
 @mixin container {
   width: min(1200px, 92vw);
   margin-inline: auto;
+  max-width: 1120px;
 }
 
 @mixin grid($min: 240px, $gap: 20px) {

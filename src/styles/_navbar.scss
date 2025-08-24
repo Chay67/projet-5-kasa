@@ -2,8 +2,38 @@
 @use "variables" as var;
 
 .navbar {
-  border-bottom: 1px solid rgba(0,0,0,.06);
-  &__inner { @include mix.container; padding: 16px 0; display: flex; justify-content: space-between; align-items: center; }
-  &__logo { color: var.$primary; font-weight: 700; }
-  &__links { display: flex; gap: 20px; }
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var.$bg;
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+
+  .navbar__logo {
+    height: 32px;
+  }
+
+  .navbar__nav {
+    display: flex;
+    gap: 16px;
+  }
+
+  .navbar__link {
+    font-size: .75rem;
+    letter-spacing: .03em;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    color: var.$muted;
+
+    &.active,
+    &:hover {
+      border-color: var.$primary;
+      color: var.$text;
+    }
+  }
 }

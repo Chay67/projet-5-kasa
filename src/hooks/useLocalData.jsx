@@ -10,8 +10,10 @@ export default function useLocalData() {
 
     if (storedData) {
       // Si déjà en localStorage -> on charge directement
-      setData(JSON.parse(storedData));
-      setLoading(false);
+      // setTimeout(() => {
+        setData(JSON.parse(storedData));
+        setLoading(false);
+      // }, 3000);
     } else {
       // Sinon -> on récupère via fetch
       fetch("/src/data/data.json")
@@ -22,14 +24,19 @@ export default function useLocalData() {
           return res.json();
         })
         .then((json) => {
-          setData(json);
-          localStorage.setItem("data", JSON.stringify(json));
+          // setTimeout(() => {
+            setData(json);
+            localStorage.setItem("data", JSON.stringify(json));
+          // }, 3000);
         })
         .catch((err) => {
           setError(err.message);
         })
         .finally(() => {
-          setLoading(false);
+          // setTimeout(() => {
+            setLoading(false);
+          // }, 3000);
+          // setLoading(false);
         });
     }
   }, []);

@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/logo-kasa.svg';
 
 export default function Footer() {

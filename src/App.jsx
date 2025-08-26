@@ -1,25 +1,25 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Logement from './pages/Logement';
-import NotFound from './pages/NotFound';
+import React from "react";
+import { Routes, Route, Navigate, BrowserRouter as Router } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Logement from "./pages/Logement";
+import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-export default function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
-      <main className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/logement/:id" element={<Logement />} />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route path="*" element={<Navigate to={"/not-found"} />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/logement/:id" element={<Logement />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
-}
+};
+
+export default App;

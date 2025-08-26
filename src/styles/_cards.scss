@@ -3,7 +3,7 @@
 .card {
     display: block;
     position: relative;
-    border-radius: var.$radius-lg;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: var.$shadow;
 
@@ -11,6 +11,14 @@
         position: relative;
         height: 220px;
         background: #ff6a6a;
+
+        @media screen and (min-width: 768px) {
+            height: 300px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            height: 340px;
+        }
     }
 
     .card__media img {
@@ -39,5 +47,10 @@
         right: 16px;
         color: #fff;
         font-weight: 700;
+        font-size: 16px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 18px;
+        }
     }
 }

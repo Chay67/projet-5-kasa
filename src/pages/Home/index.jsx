@@ -1,25 +1,19 @@
-import React from 'react'
-import useLocalData from "../../hooks/useLocalData";
-import Card from "../../components/Card";
 import Banner from "../../components/Banner";
-import bannerImage from '../../assets/banner-mobile.png';
+import Gallery from "../../components/Gallery";
+import imgHomeBanner from "../../assets/images/banner/homeBanner.png";
+import useLocalData from "../../hooks/useLocalData";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
-export default function Home() {
+const Home = () => {
   const { data, loading, error } = useLocalData();
-  if (loading) return <p>Chargement...</p>;
-  if (error) return <p>Erreur : {error}</p>;
+
+
   return (
-    <>
-      <Banner image={bannerImage} title="Chez vous, partout et ailleurs" />
-      <main className="page home">
-        <ul className="home__list">
-          {data.map(item => (
-            <li key={item.id}>
-              <Card id={item.id} title={item.title} cover={item.cover} />
-            </li>
-          ))}
-        </ul>
-      </main>
-    </>
+    <div className="home">
+        <Banner title={<>Chez vous, <span>partout et ailleurs</span></>} image={imgHomeBanner} />
+        {loading && (!data || !data.length) ? <LoadingSpinner /> : <Gallery data={data} />}
+    </div>
   );
-}
+};
+
+export default Home;

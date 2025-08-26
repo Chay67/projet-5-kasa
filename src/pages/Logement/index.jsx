@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import FicheLogementDisplay from "../../components/FicheLogement";
+import Footer from "../../components/Footer";
+import Header from "../../components/Navbar";
 
-const Logement = () => {
+const FichLogment = () => {
   return (
-    <div>Logement</div>
-  )
-}
+    <div className="logement">
+        <FicheLogementDisplay />
+    </div>
+  );
+};
 
-export default Logement
+export default FichLogment;

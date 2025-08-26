@@ -1,8 +1,36 @@
 .home {
-    &__list {
+    &__gallery {
         display: grid;
-        gap: 16px;
-        margin-top: 16px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+
+            background-color: #F6F6F6;
+            border-radius: 25px;
+            padding: 20px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            row-gap: 50px;
+            padding: 50px;
+        }
+    }
+
+    &__container {
+        padding: 22px 20px;
+        max-width: 1240px;
+        margin: 0 auto;
+
+        @media screen and (min-width: 768px) {
+            padding-top: 30px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-top: 43px;
+        }
     }
 }
-

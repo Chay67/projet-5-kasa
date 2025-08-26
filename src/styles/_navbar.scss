@@ -2,38 +2,78 @@
 @use "variables" as var;
 
 .navbar {
-  position: sticky;
   top: 0;
   z-index: 10;
   background: var.$bg;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
 
   .navbar__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 0;
+    padding: 20px 0 27px;
+
+    @media screen and (min-width: 768px) {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding-top: 45px;
+      padding-bottom: 50px;
+    }
   }
 
   .navbar__logo {
-    height: 32px;
+    width: 145px;
+    height: auto;
+
+    @media screen and (min-width: 768px) {
+      width: 180px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 210px;
+    }
   }
 
   .navbar__nav {
     display: flex;
     gap: 16px;
+
+    @media screen and (min-width: 768px) {
+      gap: 40px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      gap: 60px;
+    }
   }
 
   .navbar__link {
-    font-size: .75rem;
+    font-size: 12px;
+    font-weight: 500;
     letter-spacing: .03em;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     color: var.$muted;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+      text-transform: initial;
+      font-size: 16px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 24px;
+    }
 
     &.active,
     &:hover {
-      border-color: var.$primary;
-      color: var.$text;
+      border-color: black;
+      color: black;
     }
   }
 }
